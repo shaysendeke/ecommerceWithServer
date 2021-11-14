@@ -11,7 +11,7 @@ axios
       Brand: ${result[index].brand}.<br>
       Description:<br> "${result[index].description}"<br>
       <img src="${result[index].Img1}" style= "width:200px; height:200px">
-      <button style="margin-bottom: 2px">add to cart</button></p>`;
+      <button style="margin-bottom: 2px" class=""addToCartBtn">add to cart</button></p>`;
     }
     console.log(result);
 
@@ -24,3 +24,4 @@ axios
   .then(function () {
     // always executed
   });
+ 

@@ -102,12 +102,13 @@
 
 
 console.log("app is loading");
+require("dotenv").config()
 const express = require("express")
 const mongo= require("mongodb")
 const MongoClient = mongo.MongoClient;
-const URL = "mongodb://localhost:27017"
+const URL = process.env.MONGO_URL
 const app =express()
-const PORT = 8080
+const PORT = process.env.PORT 
 const axios = require("axios")
 const path = require("path");
 const publicPath = path.join(__dirname, "..", "public");
@@ -116,11 +117,11 @@ const productsCollection = "products"
 const contactsCollection = "contacts"
 const cartsCollection = "carts"
 const objectId = mongo.ObjectId;
-
 app.use(express.json());
 
 app.use(express.static(publicPath));
 
+// !!to get all the products
 app.get("/products", (req, res) => {
   MongoClient.connect(URL, function (err, db) {
     if (err) throw err;
@@ -137,30 +138,45 @@ app.get("/products", (req, res) => {
   });
 });
 
+// !!to add anew product
 app.post("/products", (req, res) => {
   MongoClient.connect(URL, function (err, db) {
-    const id = req.body.id;
+    // const id = req.body.id;
     const category = req.body.category;
     const brand = req.body.brand;
     const price = req.body.price;
     const name = req.body.name;
     const description = req.body.description;
+    const img = req.body.Img1
+    
+    const obj = {
+      category,
+      brand,
+      price,
+      name,
+      description,
+      img
+
+    }
+    console.log(obj);
     if (err) throw err;
     const dbo = db.db(dbName);
-    insertObj(dbo, "products", {
-      id: id,
-      category: category,
-      price: price,
-      brand: brand,
-      name: name,
-      description: description
-    });
+    insertObj(dbo, "products",obj
+    //  {
+      // id: id,
+      // category: category,
+      // price: price,
+      // brand: brand,
+      // name: name,
+      // description: description
+    // }
+    );
     // db.close();
   });res.send(201)
 });
 
 
-
+// !!to add anew contact message
 app.post("/contacts", (req, res) => {
   MongoClient.connect(URL, function (err, db) {
     if (err) throw err;
@@ -304,7 +320,7 @@ app.delete(`/carts/:id`, (req, res) => {
 });
 })
 
-app.post(`/carts`, (req, res) => {
+app.patch(`/carts/:id`, (req, res) => {
   MongoClient.connect(URL, function (err, db) {
     if (err) throw err;
     const dbo = db.db(dbName);

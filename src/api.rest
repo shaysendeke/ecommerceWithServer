@@ -8,10 +8,11 @@ Content-Type: application/json
 {
 "id": 234,
 "category": "TV",
-"brand": "SAMSUNG",
-"price": 5555,
-"name": "DELUX",
-"description": "lorem lorem ipsum bla bla bla"
+"brand": "Sharp",
+"price": 5005,
+"name": "4k HD SMART-TV",
+"description": "lorem lorem ipsum bla bla bla",
+"img" : "https://www.alm.co.il/media/catalog/product/cache/cc691f46483ab777ac6e75d34862f8b8/a/1/a11.png"
 }
 
 ###
@@ -61,7 +62,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE  http://localhost:8080/products/618ad91965b754c9d9c04dce
+DELETE  http://localhost:8080/products/619113ad96fd82236d210778
 ###
 GET   http://localhost:8080/carts
 ###
@@ -72,4 +73,12 @@ Content-Type: application/json
 {
 
     "producst": []
+}
+
+###
+PATCH        http://localhost:8080/carts/add/618d0adb9c70ac3d8898f6fe
+Content-Type: "application/json"
+
+{
+    "_id" : "6182a685541203c54337ad2a"
 }

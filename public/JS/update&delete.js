@@ -1,16 +1,15 @@
+
 const update = document.getElementById("update");
 const deleteProduct = document.getElementById("delete");
 const updateForm = document.getElementById("updateForm");
 const deleteForm = document.getElementById("deleteForm");
 const addForm = document.getElementById("addForm")
-const addNewCart = document.getElementById("addANewCart")
 
 updateForm.addEventListener("submit", updateObject);
 deleteForm.addEventListener("submit", deleteDocument1);
 addForm.addEventListener("submit", addObjects);
-addNewCart.addEventListener("submit", addObjects)
 
-
+// !!! this function updates an exisiting product by selected fields by ID.
 function updateObject(event) {
   event.preventDefault();
   const id = document.getElementById("updateId").value;
@@ -21,7 +20,7 @@ function updateObject(event) {
   const description = document.getElementById("updateDescription").value;
   const img = document.getElementById("updateImg").value
   axios
-  .patch(`/products/${id}`, {
+  .patch(`/products/id`, {
     id: id,
     price: price,
     category: category,
@@ -39,21 +38,33 @@ function updateObject(event) {
   })
 }
 
+// !!! this function delets an exisiting product  by ID.
 function deleteDocument1(event) {
   event.preventDefault();
   console.log("hello2");
   let id = document.getElementById("deleteId").value;
-  console.log(id);
-//   axios
-//     .delete(`/products/${id}`)
-//     .then(function (response) {
-//       console.log(response.data);
-//     })
-//     .catch(function (error) {
-//       console.log(id);
-//     });
-}
+  axios
+  .delete(`/products/${id}`)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.log(`${id} product was deleted`);
+  });
 
+  console.log(id);
+  }
+  // axios
+  //   .delete(`/products/${id}`)
+  //   .then(function (response) {
+  //     console.log(response.data);
+  //   })
+  //   .catch(function (error) {
+  //     console.log(id);
+  //   });
+
+
+// !!! this function adds a new product to the database.
 function addObjects(event) {
     event.preventDefault();
     // const id = document.getElementById("addId").value;
@@ -62,17 +73,28 @@ function addObjects(event) {
     const name = document.getElementById("addName").value;
     const brand = document.getElementById("addBrand").value;
     const description = document.getElementById("addDescription").value;
-    const img = document.getElementById("addImg").value
+    const Img1 = document.getElementById("addImg").value
+    // const obj = {
+    //   price,
+    //   category,
+    //   name,
+    //   brand,
+    //   description,
+    //   Img1
+    // }
+    // console.log(obj);
     axios
-    .post(`/products`, {
-    //   id: id,
+    .post(`/products`, 
+    {
+      // id: id,
       price: price,
       category: category,
       name: name,
       brand: brand,
       description: description,
-      img: img,
-    })
+      Img1: Img1,
+    }
+    )
     .then(function(response) {
         console.log(response)
     })
@@ -111,20 +133,21 @@ function deleteDocument(db, collection, objectid) {
 //     })
 // }
 
-function addObjects(event) {
-    event.preventDefault();
-    // const id = document.getElementById("addId").value;
-    const newProducts = document.getElementById("newCartProducts").value;
-    axios
-    .post(`/carts`, {
-    //   id: id,
-      newProducts: newProducts,
-    })
-    .then(function(response) {
-        console.log(response)
-    })
-    .catch(function(error) {
-        console.log(error);
-        console.log("you had a mistake in add cart function")
-    })
-  }
+
+// function addObjects(event) {
+//     event.preventDefault();
+//     // const id = document.getElementById("addId").value;
+//     const newProducts = document.getElementById("newCartProducts").value;
+//     axios
+//     .post(`/carts`, {
+//     //   id: id,
+//       newProducts: newProducts,
+//     })
+//     .then(function(response) {
+//         console.log(response)
+//     })
+//     .catch(function(error) {
+//         console.log(error);
+//         console.log("you had a mistake in add cart function")
+//     })
+//   }
