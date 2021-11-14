@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/contacts.css">
+</head>
+<body>
+    <header>
+        <img src="../MEDIA/media/logo.png" alt="logo">
+        <nav>
+            <a href="../index.html">Home PAGE</a>
+            <a href="./tv.html">TVs</a>
+            <a href="./washingMachine.html">Washing Machines</a>
+            <a href="./refrigirators.html">Refrigirators</a>
+            <a href="./microwaves.html">Microwaves</a>
+        </nav>
+    </header>
+    <div id="slider">
+            <figure>
+               <img src="../MEDIA/media/kitchen.webp" alt="">
+               <img src="../MEDIA/media/tv.webp" alt="">
+               <img src="../MEDIA/media/washing-machine.webp" alt="">
+               <img src="../MEDIA/media/microwave.png" alt="">
+               <img src="../MEDIA/media/kitchen.webp" alt="">
+            </figure>
+      </div><hr>
+
+      <H1>TO ADD A PRODUCT</H1>
+    <form id="addForm" >
+        <!-- <input type="text" placeholder="id" id="addId"><br><br> -->
+        <input type="text" placeholder="category" id="addCategory"><br><br>
+        <input type="text" placeholder="brand" id="addBrand"><br><br>
+        <input type="text" placeholder="price" id="addPrice"><br><br>
+        <input type="text" placeholder="name" id="addName"><br><br>
+        <input type="text" placeholder="img URL" id="addImg"><br><br>
+        <input type="text" placeholder="description" id="addDescription"><br><br>
+        <input id="update" type="submit" value="ADD"> 
+    </form><br><br><hr>
+
+      <H1>TO UPDATE A PRODUCT</H1>
+    <form id="updateForm" >
+        <input type="text" placeholder="id" id="updateId"><br><br>
+        <input type="text" placeholder="category" id="updateCategory"><br><br>
+        <input type="text" placeholder="brand" id="updateBrand"><br><br>
+        <input type="text" placeholder="price" id="updatePrice"><br><br>
+        <input type="text" placeholder="name" id="updateName"><br><br>
+        <input type="text" placeholder="description" id="updateDescription"><br><br>
+        <input type="text" placeholder="img URL" id="updateImg"><br><br>
+        <input id="update" type="submit" value="UPDATE"> 
+    </form><br><br><hr>
+
+    <H1>TO DELETE A PRODUCT</H1>
+    <form id="deleteForm" >
+        <input type="text" placeholder="id" id="deleteId"><br><br>
+                <input id="delete" type="submit" value="DELETE ITEM"> 
+    </form><HR></HR>
+    <br>
+
+    <form id="addANewCart">
+    <input type="text" placeholder="products" id="newCartProducts"><br><br>
+    <input id="newcart" type="submit" value="create new cart">
+    </form>
+
+
+
+
+    
+    <footer>
+        <h4>All rights reserved 2021 Tesla Electricities</h4>
+        <h6>Address: 123 Lorem Ipsum st. | Tel. 1234567 </h6>
+        <img src="../MEDIA/media/fb.png" alt="facebook">
+        <img src="../MEDIA/media/igram.jpg" alt="instagram">
+        <img src="../MEDIA/media/logo.png" alt="">
+        <img src="../MEDIA/media/twitter.png" alt="twitter">
+        <img src="../MEDIA/media/ytube.png" alt="youtube">        
+</footer>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="../JS/update&delete.js"></script>
+</html>

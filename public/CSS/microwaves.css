@@ -1,0 +1,220 @@
+:root {
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --bg1: #f1f0ec;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg1);
+  height: 100px;
+  display: block;
+  z-index: 10000;
+}  
+header img {
+  height: 125px;
+  width: 125px;
+  vertical-align: middle;
+  float: left;
+}
+
+header nav {
+  display: flex;
+  text-align: left;
+  float: left;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+nav a {
+  margin: 20px;
+  font-size: larger;
+  font-family: var(--font);
+  justify-self: center;
+  vertical-align: center;
+  color: blue;
+  font-size: 10px;
+  filter: contrast(1.9);
+  }
+  footer {
+      color: var(--grn);
+      font-size: larger;
+      text-align: center;
+      background-color: var(--bg1);
+      margin-top: 10px;
+      font-family: var(--font);
+      align-items: center;
+      font-family: var(--font);
+    }
+    footer img {
+      width: 25px;
+      height: 25px;
+      margin-left: 25px;
+    }
+    #slider{
+      overflow: hidden;
+
+}
+#slider figure{
+  position: relative;
+  /* opacity: 0.7; */
+  width: 500%;
+  margin: 0;
+  left: 0;
+  animation: 20s slider alternate infinite;
+
+}
+
+#slider figure img {
+  float: left;
+  width: 20%;
+  height: 85vh;
+}
+
+#tvs, #washingMachines, #refrigirators, #microwaves{
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+  border: black solid 3px;
+  background-color:rgb(236, 217, 217);
+  margin: 5px;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  justify-items: stretch;
+  align-items: center;
+  justify-content: space-evenly;
+  align-content: space-between;
+}
+.tvs.img:hover {
+  width: 300px;
+  height: 300px;
+}
+
+h1 {
+  text-align: center;
+  font-size: large;
+  color: darkslateblue;
+}
+
+#recommendations{
+  background-color:rgb(236, 217, 217);
+  text-align: center;
+  border: black solid 3px;
+  font-family: var(--font);
+}  
+.rtext{
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+    }
+
+#recommendations .slide{
+  background-color:rgb(150, 238, 201);
+  border: black solid 3px;
+  width: 100%;
+  flex-shrink: 0;
+  animation: slideleft 65s infinite
+}
+
+
+
+
+@keyframes slider {
+  0% {left: 0;}
+  20% {left: 0;}
+  32.5% {left: -100%;}
+  40%  {left: -200%;}
+  50%  {left: -300%;}
+  80%  {left: -400%;}
+  100%  {left: -400%;}  
+}
+.productImg:hover {
+  width: 250px;
+  height: 250px;
+  box-shadow: 3px 3px  rgb(236, 217, 217);
+  transition: 1s;
+}
+
+.productImg {
+width: 175px;
+height: 175px;
+}
+
+@keyframes slideleft {
+  0%{
+    transform: translateX(0%);
+    animation-delay: 3s;
+  }
+  25%{
+    transform: translateX(-100%);
+  }
+  50%{
+    transform: translateX(-200%);
+  }
+  75%{
+    transform: translateX(-300%);
+  }
+  100%{
+    transform: translateX(-400%);
+  }
+}
+
+@media screen and (max-width: 1024px){
+  #tvs, #washingMachines, #refrigirators, #microwaves{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  } 
+}
+
+@media screen and (max-width: 768px){
+  #tvs, #washingMachines, #refrigirators, #microwaves{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  } 
+}
+
+@media screen and (max-width: 425px){
+  #tvs, #washingMachines, #refrigirators, #microwaves{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  header img {
+    display: none;
+  }
+}
+@media screen and (max-width: 375px){
+  #tvs, #washingMachines, #refrigirators, #microwaves{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  } 
+  header img {
+    display: none;
+  }
+}
+@media screen and (max-width: 631px){
+  nav a{
+    /* position: fixed; */
+    position: relative;
+    text-decoration: none;
+    top: 0px;
+    font-size: 6px;
+    /* font-weight: 200; */
+}
+header img {
+  display: none;
+}
+nav {
+  position: fixed;
+}
+}
+  

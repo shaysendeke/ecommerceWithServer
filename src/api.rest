@@ -1,0 +1,75 @@
+
+ GET http://localhost:8080/products
+###
+
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{
+"id": 234,
+"category": "TV",
+"brand": "SAMSUNG",
+"price": 5555,
+"name": "DELUX",
+"description": "lorem lorem ipsum bla bla bla"
+}
+
+###
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+"firstName": "yossi",
+"lastName" : "israeli",
+"email" : "daviddavidi@gmail.com",
+"phone" : 12345678910,
+"message" : "it was a shitty day"
+}
+###
+
+GET http://localhost:8080/conta
+###
+
+GET http://localhost:8080/carts
+###
+
+POST http://localhost:8080/carts
+
+{
+    "id": "328746234893249823748927",
+    "products": "[{"tv"}, {"washing-machine"}]"
+}
+###
+PATCH http://localhost:8080/carts
+###
+GET http://localhost:8080/carts
+
+{
+    "_id"
+:
+"618a7fdfa9a5e035a8fd2b70"
+}
+###
+
+PATCH http://localhost:8080/products/6182a685541203c54337ad2a
+Content-Type: application/json
+
+{
+"name": "SAMSUNG",
+"price": 12345
+
+}
+
+###
+DELETE  http://localhost:8080/products/618ad91965b754c9d9c04dce
+###
+GET   http://localhost:8080/carts
+###
+
+POST http://locathost:8080/carts
+Content-Type: application/json
+
+{
+
+    "producst": []
+}
